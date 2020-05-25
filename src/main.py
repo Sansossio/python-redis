@@ -7,5 +7,5 @@ r = redis.Redis(host, port)
 
 r.set('test', 'value')
 
-# Print = value
 print(r.get('test'))
+# Print = b"value"
