@@ -4,8 +4,12 @@ services:
     build: .
     ports:
       - 8080:3000
+    environment:
+      - REDIS_HOST=redis
     depends_on: 
       - redis
+    volumes: 
+      - .:/app
   redis:
     image: "redis:alpine"
     ports:
