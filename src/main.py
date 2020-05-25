@@ -1,6 +1,9 @@
 import redis
+import os
 
-r = redis.Redis(host='localhost', port=6379, db=0)
+host = os.getenv('REDIS_HOST') or 'localhost'
+port = os.getenv('REDIS_PORT') or 6379
+r = redis.Redis(host, port)
 
 r.set('test', 'value')
 
